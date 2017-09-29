@@ -10,8 +10,11 @@ args = parser.parse_args()
 
 if __name__ == "__main__":
 
-    if args.search:
-        search_string = input("Please enter search string: ")
+    params = {'q' : None}
 
-    r = requests.get("https://www.googleapis.com/books/v1/volumes?q=kevin")
+    if args.search:
+        params['q'] = input("Please enter search string: ")
+
+    #r = requests.post("https://www.googleapis.com/books/v1/volumes?q=kevin")
+    r = requests.get("https://www.googleapis.com/books/v1/volumes", params=params)
     print(r.text)
