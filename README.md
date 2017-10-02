@@ -23,3 +23,24 @@ Tests:
 ============
 Please include tests to cover your work.
 
+Usage:
+============
+To get help run "python3 library_cli.py -h"
+
+usage: library_cli.py [-h] [--search] --output OUTPUT [--sort SORT]
+                      [--load LOAD] [--reverse_order]
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --search         Prompt for search query in GET request
+  --output OUTPUT  Name of file to save as, make sure to have permissions to
+                   write
+  --sort SORT      Choose to sort from following keys: {id, book_title,
+                   list_price, avg_rating, ratings_count, published_date}
+  --load LOAD      Load from csv file, make sure to have permissions to read
+  --reverse_order  Bonus feature: sort by descending order
+
+To append new search results to existing library and save to output csv file:
+"python3 library_cli.py --load library.csv --search --output library_append.csv"
+
+The output file is a requirement in the command line
